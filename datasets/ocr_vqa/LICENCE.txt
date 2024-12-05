@@ -1,0 +1,47 @@
+OCR-VQA Dataset License (Version 1.0)
+
+Apache License 2.0
+
+1. Grant of License
+
+Subject to the terms and conditions of this License, the licensor hereby grants you a worldwide, royalty-free, non-exclusive, sublicensable license to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the OCR-VQA Dataset, and to permit persons to whom the OCR-VQA Dataset is furnished to do so, under the terms of the Apache License, Version 2.0.
+
+2. Redistribution
+
+You may reproduce and distribute copies of the OCR-VQA Dataset in any medium, provided that you include a copy of this license notice and any disclaimers in any redistributions. You must also give any other recipients of the OCR-VQA Dataset a copy of this License along with the OCR-VQA Dataset. If the OCR-VQA Dataset is modified, you must prominently state in your documentation the fact that it has been modified and the date of any modifications.
+
+3. Use of Meta-data
+
+The OCR-VQA Dataset contains meta-data derived from the Book Cover Dataset (refer to Attribution). You agree to comply with the terms of the Apache License 2.0 for the Book Cover Dataset regarding the use of its meta-data. Any modifications or additions to the meta-data should be clearly documented.
+
+4. QA Pairs and URL Links
+
+The OCR-VQA Dataset provides QA pairs and URL links to book covers. You are allowed to use, share, and distribute these QA pairs and URL links for research, educational, and non-commercial purposes. Any commercial use of the QA pairs and URL links requires explicit permission from the licensor.
+
+5. Attribution
+
+The OCR-VQA Dataset contains 207,572 images along with associated question-answer pairs. When using or redistributing the OCR-VQA Dataset, you agree to give proper attribution to the following paper by including the reference to it in any publications, presentations, or other forms of dissemination related to the OCR-VQA Dataset: 
+
+
+Anand Mishra, Shashank Shekhar, Ajeet Kumar Singh, Anirban Chakraborty:
+"OCR-VQA: Visual Question Answering by Reading Text in Images," ICDAR 2019.
+
+Additionally, it is essential to acknowledge that OCR-VQA utilizes images and metadata acquired under the Apache 2.0 Licence (Link: https://github.com/uchidalab/book-dataset/blob/master/LICENSE) from the following paper:
+
+Brian Kenji Iwana, Seiichi Uchida:
+"Judging a Book By its Cover." CoRR abs/1610.09204 (2016)
+
+Therefore, please also give proper attribution and reference to the above paper in any publications, presentations, or other forms of dissemination related to the OCR-VQA Dataset.
+
+
+6. No Warranty
+
+The OCR-VQA Dataset is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the licensor or contributors be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the OCR-VQA Dataset or the use or other dealings in the OCR-VQA Dataset.
+
+7. Governing Law
+
+This License shall be governed by and construed in accordance with the laws of the jurisdiction specified in the notice contained in the OCR-VQA Dataset. If no such notice is provided, the laws of the jurisdiction in which the licensor is incorporated shall govern this License.
+
+8. No Endorsement
+
+The inclusion of the reference to the source paper in this license does not imply endorsement by the authors or the original contributors of the OCR-VQA Dataset.
