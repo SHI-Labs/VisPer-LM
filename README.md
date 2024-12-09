@@ -36,6 +36,7 @@ We propose **distilling target visual information into the intermediate represen
 - Clone this repository.
 
     ```bash
+    git lfs install
     git clone https://github.com/SHI-Labs/OLA-VLM
     cd OLA-VLM
     ```
@@ -69,6 +70,8 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --model-path shi-labs/pretrain_dsg_OLA-VLM
 ```
 
 ## Getting Started
+
+>Note: We provide the guide to integrating the embeddding losses from OLA-VLM into any custom MLLM in [Custom_MLLM.md](docs/Custom_MLLM.md)
 
 ### Training
 
