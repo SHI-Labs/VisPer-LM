@@ -357,7 +357,7 @@ txt = gr.Textbox(
 )
 
 
-title = "<h1 style='margin-bottom: -10px; text-align: center'>OLA-VLM: Optimizing Language Model Representations for Enhanced Visual Quality and Alignment</h1>"
+title = "<h1 style='margin-bottom: -10px; text-align: center'>OLA-VLM: Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation</h1>"
 description = "<p style='font-size: 16px; margin: 5px; font-weight: w300; text-align: center'> <a href='https://praeclarumjj3.github.io/' style='text-decoration:none' target='_blank'>Jitesh Jain</a> &nbsp;&nbsp <a href='https://zyang-ur.github.io/' style='text-decoration:none' target='_blank'>Zhengyuan Yang</a> &nbsp;&nbsp <a href='https://www.humphreyshi.com/home' style='text-decoration:none' target='_blank'>Humphrey Shi<sup>*</sup></a> &nbsp;&nbsp <a href='https://www.humphreyshi.com/home' style='text-decoration:none' target='_blank'>Jianfeng Gao<sup>*</sup></a> &nbsp;&nbsp <a href='https://jwyang.github.io/' style='text-decoration:none' target='_blank'>Jianwei Yang<sup>*</sup></a></p>" \
             + "<p style='font-size: 12px; margin: 5px; font-weight: w300; text-align: center'><sup>*</sup>Equal Advising</p>" \
             + "<p style='font-size: 16px; margin: 5px; font-weight: w600; text-align: center'> <a href='https://praeclarumjj3.github.io/ola_vlm/' target='_blank'>Project Page</a> | <a href='https://youtu.be/' target='_blank'>Video</a> | <a href='https://arxiv.org/abs/' target='_blank'>ArXiv</a> | <a href='https://github.com/SHI-Labs/OLA-VLM' target='_blank'>Github</a></p>"

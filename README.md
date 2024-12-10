@@ -1,15 +1,15 @@
 # OLA-VLM
 
-[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![HuggingFace space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OLA-VLM) [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/go493IGgVWo)
+[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/bY6BN9cNCHg)
 
 [Jitesh Jain<sup>*</sup>](https://praeclarumjj3.github.io/), [Zhengyuan Yang](https://zyang-ur.github.io/), [Humphrey Shi<sup>&dagger;</sup>](https://www.humphreyshi.com/home), [Jianfeng Gao<sup>&dagger;</sup>](https://scholar.google.com/citations?user=CQ1cqKkAAAAJ), [Jianwei Yang<sup>&dagger;</sup>](https://jwyang.github.io/)
 
 
 <sup>*</sup>Work done during an internship at Microsoft Research, Redmond &nbsp;&nbsp; <sup>&dagger;</sup>Equal Advising
 
-[[`Project Page`](https://praeclarumjj3.github.io/ola_vlm/)] | [[`arXiv`](https://arxiv.org/abs)] [[`Model Checkpoints`](https://huggingface.co/models?search=OLA-VLM)] [[`Video`]()] [[`BibTeX`](#citation)]
+[[`Project Page`](https://praeclarumjj3.github.io/ola_vlm/)] | [[`arXiv`](https://arxiv.org/abs/2412.09585)] [[`Model Checkpoints`](https://huggingface.co/models?search=OLA-VLM)] [[`Video`](https://drive.google.com/file/d/1nESAo9SiMt8uTH7GC3sAJIg8qohBC2-t/view?usp=drive_link)] [[`BibTeX`](#citation)]
 
-This repo contains the code for our paper **OLA-VLM: Optimizing Language Model Representations for Enhanced Visual Quality and Alignment**.
+This repo contains the code for our paper **OLA-VLM: Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation**.
 
 <p align="center">
     <img src="assets/teaser.png" width="100%" class="center"/>
@@ -27,7 +27,9 @@ We propose **distilling target visual information into the intermediate represen
 
 ## News
 
-- **[December 21, 2024]**: [**Project Page**](https://praeclarumjj3.github.io/ola-vlm/), [**ArXiv Preprint**](https://arxiv.org/abs/) and [**GitHub Repo**](https://github.com/SHI-Labs/OLA-VLM) are public! 🚀
+- **[December 12, 2024]**: 
+    - [**Project Page**](https://praeclarumjj3.github.io/ola-vlm/), [**ArXiv Preprint**](https://arxiv.org/abs/2412.09585) and [**GitHub Repo**](https://github.com/SHI-Labs/OLA-VLM) are public! 🚀
+    - We also open-source the [model checkpoints](https://huggingface.co/models?search=OLA-VLM) and [probes](https://huggingface.co/models?search=shi-labs/probe) on huggingface hub! 🎁
 
 ## Installation Instructions
 
@@ -57,9 +59,7 @@ We propose **distilling target visual information into the intermediate represen
 
 ## Demo
 
-[![HuggingFace space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OLA-VLM)
-
-You can use one of the Gradio interface to interact with OLA-VLM locally. The demo also supports visualizing the respresentations from the slected intermediate LLM layers (embedding loss positions).
+You can use the Gradio interface to interact with OLA-VLM locally. The demo also supports visualizing the respresentations from the slected intermediate LLM layers (embedding loss positions).
 
 ```bash
 # install demo-specific libraries
@@ -103,7 +103,7 @@ If you found OLA-VLM useful in your research, please consider starring ⭐ us on
 
 ```bibtex
 @article{jain2024ola_vlm,
-      title={{OLA-VLM: Optimizing Language Model Representations for Enhanced Visual Quality and Alignment}},
+      title={{OLA-VLM: Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation}},
       author={Jitesh Jain and Zhengyuan Yang and Humphrey Shi and Jianfeng Gao and Jianwei Yang},
       journal={arXiv},
       year={2024}

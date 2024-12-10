@@ -45,7 +45,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
     if use_flash_attn:
         kwargs['attn_implementation'] = 'flash_attention_2'
 
-    if 'llava' in model_name.lower() or 'clip' in model_name.lower() or 'sherlock' in model_name.lower() or 'dino' in model_name.lower():
+    if 'llava' in model_name.lower() or 'clip' in model_name.lower() or 'ola' in model_name.lower():
         # Load LLaVA model
         if 'lora' in model_name.lower() and model_base is None:
             warnings.warn('There is `lora` in model name but no `model_base` is provided. If you are loading a LoRA model, please provide the `model_base` argument. Detailed instruction: https://github.com/haotian-liu/LLaVA#launch-a-model-worker-lora-weights-unmerged.')
@@ -56,8 +56,6 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             print('Loading LLaVA from base model...')
             if "phi" in model_name.lower():
                 model = LlavaPhi3ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained, **kwargs)
-            elif "qwen" in model_name.lower():
-                model = LlavaQwenForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained, **kwargs)
             else:    
                 model = LlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained, **kwargs)
             token_num, tokem_dim = model.lm_head.out_features, model.lm_head.in_features
@@ -94,44 +92,20 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             print('Loading LLaVA from base model...')
             if "probe" in model_name.lower():
                 cfg_pretrained = AutoConfig.from_pretrained(model_path)
-                if "phi" in model_name.lower():
-                    tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
-                    model = ProbeDSGLlavaPhi3ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-                elif "qwen" in model_name.lower():
-                    tokenizer = AutoTokenizer.from_pretrained(model_base)
-                    model = ProbeDSGLlavaQwen2ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-                else:
-                    tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
-                    model = ProbeDSGLlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-            elif 'mpt' in model_name.lower():
-                if not os.path.isfile(os.path.join(model_path, 'configuration_mpt.py')):
-                    shutil.copyfile(os.path.join(model_base, 'configuration_mpt.py'), os.path.join(model_path, 'configuration_mpt.py'))
-                tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True)
-                cfg_pretrained = AutoConfig.from_pretrained(model_path, trust_remote_code=True)
-                model = LlavaMptForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
+                tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
+                model = ProbeDSGLlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
             elif "phi" in model_name.lower():
                 tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
                 cfg_pretrained = AutoConfig.from_pretrained(model_path)
                 if "dsg" in model_name.lower():
                     model = OlaLlavaPhi3ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-                elif "multi_enc" in model_name.lower():
-                    model = MultiEncLlavaPhi3ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
                 else:
                     model = LlavaPhi3ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-            elif "qwen" in model_name.lower():
-                tokenizer = AutoTokenizer.from_pretrained(model_base)
-                cfg_pretrained = AutoConfig.from_pretrained(model_path)
-                if "dsg" in model_name.lower():
-                    model = OlaLlavaQwenForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-                else:
-                    model = LlavaQwenForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
             else:
                 tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
                 cfg_pretrained = AutoConfig.from_pretrained(model_path)
                 if "dsg" in model_name.lower():
-                    model = OlaLlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
-                elif "multi_enc" in model_name.lower():
-                    model = MultiEncLlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
+                    model = OlaLlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)      
                 else:
                     model = LlavaLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained, **kwargs)
 
@@ -140,49 +114,18 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             model.load_state_dict(mm_projector_weights, strict=False)
         else:
             if 'probe' in model_name.lower():
-                if 'phi' in model_name.lower():
-                    tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-                    model = ProbeDSGLlavaPhi3ForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-                elif 'qwen' in model_name.lower():
-                    tokenizer = AutoTokenizer.from_pretrained(model_path)
-                    model = ProbeDSGLlavaQwen2ForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-                else:
-                    tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-                    model = ProbeDSGLlavaLlamaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-            elif 'mpt' in model_name.lower():
-                tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
-                model = LlavaMptForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
+                tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
+                model = ProbeDSGLlavaLlamaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
             elif "phi" in model_name.lower():
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
                 if "dsg" in model_name.lower():
                     model = OlaLlavaPhi3ForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-                elif "multi_enc" in model_name.lower():
-                    model = MultiEncLlavaPhi3ForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
                 else:
                     model = LlavaPhi3ForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-            elif "qwen" in model_name.lower():
-                tokenizer = AutoTokenizer.from_pretrained(model_path)
-                if "dsg" in model_name.lower():
-                    model = OlaLlavaQwenForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-                else:
-                    model = LlavaQwenForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-            elif 'mistral' in model_name.lower():
-                tokenizer = AutoTokenizer.from_pretrained(model_path)
-                model = LlavaMistralForCausalLM.from_pretrained(
-                    model_path,
-                    low_cpu_mem_usage=True,
-                    **kwargs
-                )
             else:
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
                 if "dsg" in model_name.lower():
                     model = OlaLlavaLlamaForCausalLM.from_pretrained(
-                        model_path,
-                        low_cpu_mem_usage=True,
-                        **kwargs
-                    )
-                elif "multi_enc" in model_name.lower():
-                    model = MultiEncLlavaLlamaForCausalLM.from_pretrained(
                         model_path,
                         low_cpu_mem_usage=True,
                         **kwargs
@@ -207,25 +150,17 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             print('Convert to FP16...')
             model.to(torch.float16)
         else:
-            use_fast = False
-            if 'mpt' in model_name.lower():
-                tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
-                model = AutoModelForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, trust_remote_code=True, **kwargs)
-            else:
-                tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-                model = AutoModelForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
+            tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
+            model = AutoModelForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
 
     image_processor = None
 
-    if 'llava' in model_name.lower() or 'sherlock' in model_name.lower() or 'probe' in model_name.lower() or 'clip' in model_name.lower() or 'dino' in model_name.lower():
+    if 'llava' in model_name.lower() or 'ola' in model_name.lower() or 'probe' in model_name.lower() or 'clip' in model_name.lower():
         
         if "convnext" in model_name.lower():
             model = reload_from_ckpt(model_path, model)
 
         vision_tower = model.get_vision_tower()
-        
-        if "multi_enc" in model_name.lower():
-            model.get_model().init_encoders(model.config)
         
         if not vision_tower.is_loaded:
             vision_tower.load_model(device_map=device_map)

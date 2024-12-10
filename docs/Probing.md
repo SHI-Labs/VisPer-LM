@@ -29,7 +29,7 @@ bash scripts/probe/probe.sh gen
 
 ## Evaluating the Probes
 
->You can find the probe checkpoints from our paper on the HF Hub: [`[depth probes]`](https://huggingface.co/models?sort=trending&search=probe_depth) | [`[seg probes]`](https://huggingface.co/models?sort=trending&search=probe_seg) | [`[gen probes]`](https://huggingface.co/models?sort=trending&search=probe_gen).
+>You can find the probe checkpoints from our paper on the HF Hub: [`[depth probes]`](https://huggingface.co/models?sort=trending&search=shi-labs/probe_depth) | [`[seg probes]`](https://huggingface.co/models?sort=trending&search=shi-labs/probe_seg) | [`[gen probes]`](https://huggingface.co/models?sort=trending&search=shi-labs/probe_gen).
 
 ### Feature Cosine-Similarity
 
