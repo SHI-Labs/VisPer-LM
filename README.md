@@ -1,6 +1,6 @@
 # OLA-VLM
 
-[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/bY6BN9cNCHg)
+[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![HuggingFace space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OLA-VLM) [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/bY6BN9cNCHg)
 
 [Jitesh Jain<sup>*</sup>](https://praeclarumjj3.github.io/), [Zhengyuan Yang](https://zyang-ur.github.io/), [Humphrey Shi<sup>&dagger;</sup>](https://www.humphreyshi.com/home), [Jianfeng Gao<sup>&dagger;</sup>](https://scholar.google.com/citations?user=CQ1cqKkAAAAJ), [Jianwei Yang<sup>&dagger;</sup>](https://jwyang.github.io/)
 
@@ -27,9 +27,8 @@ We propose **distilling target visual information into the intermediate represen
 
 ## News
 
-- **[December 12, 2024]**: 
-    - [**Project Page**](https://praeclarumjj3.github.io/ola-vlm/), [**ArXiv Preprint**](https://arxiv.org/abs/2412.09585) and [**GitHub Repo**](https://github.com/SHI-Labs/OLA-VLM) are public! 🚀
-    - We also open-source the [model checkpoints](https://huggingface.co/models?search=OLA-VLM) and [probes](https://huggingface.co/models?search=shi-labs/probe) on huggingface hub! 🎁
+- **[December 14, 2024]**: Our demo is now available on [HuggingFace Spaces](https://huggingface.co/spaces/shi-labs/OLA-VLM). Thanks to the HF team for their support with the ZeroGPU grant! 🤗
+- **[December 12, 2024]**: 🚀 [**Project Page**](https://praeclarumjj3.github.io/ola-vlm/), [**ArXiv Preprint**](https://arxiv.org/abs/2412.09585) and [**GitHub Repo**](https://github.com/SHI-Labs/OLA-VLM) are public! We also open-source the [model checkpoints](https://huggingface.co/models?search=OLA-VLM) and [probes](https://huggingface.co/models?search=shi-labs/probe) on huggingface hub! 🎁
 
 ## Installation Instructions
 
@@ -58,6 +57,8 @@ We propose **distilling target visual information into the intermediate represen
     ```
 
 ## Demo
+
+[![HuggingFace space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OLA-VLM)
 
 You can use the Gradio interface to interact with OLA-VLM locally. The demo also supports visualizing the respresentations from the slected intermediate LLM layers (embedding loss positions).
 
