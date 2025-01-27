@@ -21,7 +21,7 @@ setup(
         "diffusers===0.27.2", "protobuf", "accelerate==0.27.2"
     ],
     extras_require={
-        "train": ["deepspeed==0.12.6", "ninja", "wandb"],
+        "train": ["deepspeed==0.12.6", "ninja", "wandb", "huggingface-hub==0.24.2", "peft==0.12.0"],
         "eval": ["seaborn", "sty", "tabulate", "spacy", "word2number", "inflect"],
         "demo": ["pydantic==2.8.2", "pydantic-core==2.20.1", "fastapi==0.111.0"],
         "build": ["build", "twine"]

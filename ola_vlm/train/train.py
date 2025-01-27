@@ -31,7 +31,7 @@ from ola_vlm.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOK
 from torch.utils.data import Dataset
 from ola_vlm.train.llava_trainer import LLaVATrainer
 
-from llava import conversation as conversation_lib
+from ola_vlm import conversation as conversation_lib
 from ola_vlm.model import *
 from ola_vlm.mm_utils import tokenizer_image_token
 
