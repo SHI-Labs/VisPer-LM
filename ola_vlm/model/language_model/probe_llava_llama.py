@@ -136,19 +136,21 @@ class ProbeDSGLlavaLlamaForCausalLM(LlamaForCausalLM, OlaLlavaMetaForCausalLM, B
         
         depth_preds, depth_embs, depth_loss, depth_log_dict = self.depth_emb_forward(pil_images, layer_states)
         if self.mode == "depth" and hidden_states.shape[1] > 1:
-            if dist.get_rank() == 0:
-                log_dict = {
-                    **log_dict,
-                    **depth_log_dict
-                }
+            if pil_images is not None:
+                if dist.get_rank() == 0:
+                    log_dict = {
+                        **log_dict,
+                        **depth_log_dict
+                    }
 
         img_embs, gen_loss, log_dict = self.gen_emb_forward(pil_images, hidden_states, layer_states)
         if self.mode == "gen" and hidden_states.shape[1] > 1:
-            if dist.get_rank() == 0:
-                log_dict = {
-                    **log_dict,
-                    **depth_log_dict
-                }
+            if pil_images is not None:
+                if dist.get_rank() == 0:
+                    log_dict = {
+                        **log_dict,
+                        **depth_log_dict
+                    }
         
         loss = seg_loss + depth_loss + gen_loss
 

@@ -15,4 +15,4 @@ wait
 
 python -m ola_vlm.eval.merge_json --ckpt $1 --mode $2 --num-chunks $CHUNKS
 
-python -m ola_vlm.eval.get_dsg_scores --ckpt $1 --mode $2
+python -m ola_vlm.eval.get_probe_dsg_scores --ckpt $1 --mode $2

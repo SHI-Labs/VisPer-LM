@@ -371,7 +371,7 @@ class BaseProbe_VLM(BaseCausalLM):
             else:
                 depth_targets, depth_gts = None, None
             
-            for i, idx in enumerate(self.num_layers):
+            for i, idx in enumerate(range(self.num_layers)):
                 
                 depth_feats = self.forward_emb_predictor(layer_states, idx, i, self.image_depth_heads)
                 depth_embs.append(depth_feats)
@@ -404,9 +404,9 @@ class BaseProbe_VLM(BaseCausalLM):
                 seg_targets = self._get_seg_targets(pil_images, hidden_states)
             else:
                 seg_targets = None
-            for i, idx in enumerate(self.num_layers):
+            for i, idx in enumerate(range(self.num_layers)):
 
-                seg_emb = self.forward_emb_predictor(layer_states, idx, i, "seg", self.image_seg_heads)
+                seg_emb = self.forward_emb_predictor(layer_states, idx, i, self.image_seg_heads)
                 seg_embs.append(seg_emb)
 
                 if seg_targets is not None:
@@ -431,9 +431,9 @@ class BaseProbe_VLM(BaseCausalLM):
             else:
                 gen_targets = None
             
-            for i, idx in enumerate(self.num_layers):
+            for i, idx in enumerate(range(self.num_layers)):
                 
-                img_emb = self.forward_emb_predictor(layer_states, idx, i, "gen", self.image_gen_heads)
+                img_emb = self.forward_emb_predictor(layer_states, idx, i, self.image_gen_heads)
                 img_embs.append(img_emb)
 
                 if gen_targets is not None:

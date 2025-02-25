@@ -157,7 +157,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
 
     if 'llava' in model_name.lower() or 'ola' in model_name.lower() or 'probe' in model_name.lower() or 'clip' in model_name.lower():
         
-        if "convnext" in model_name.lower():
+        if "convnext" in model.config.mm_vision_tower.lower():
             model = reload_from_ckpt(model_path, model)
 
         vision_tower = model.get_vision_tower()
