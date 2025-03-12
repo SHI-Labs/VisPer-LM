@@ -72,7 +72,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --model-path shi-labs/pretrain_dsg_OLA-VLM
 
 ## Getting Started
 
->Note: We provide the guide to integrating the embeddding losses from OLA-VLM into any custom MLLM in [Custom_MLLM.md](docs/Custom_MLLM.md)
+>Note: We provide the guide to integrating the embedding losses from OLA-VLM into any custom MLLM in [Custom_MLLM.md](docs/Custom_MLLM.md)
 
 ### Training
 
