@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export WANDB_PROJECT= "OLA-VLM"
-export WANDB_NAME="pretrain_dsg_OLA-VLM-CLIP-ViT-Llama3-8b"
+export WANDB_PROJECT= "VisPer-LM"
+export WANDB_NAME="pretrain_dsg_VisPer-LM-CLIP-ViT-Llama3-8b"
 
 # Base LLM choices: 
 # Llama3-8b: meta-llama/Meta-Llama-3-8B-Instruct (llava_llama_3)
@@ -33,7 +33,7 @@ deepspeed ola_vlm/train/ola_vlm_train_mem.py \
     --mm_use_im_start_end False \
     --mm_use_im_patch_token False \
     --bf16 True \
-    --output_dir outputs/pretrain_dsg_OLA-VLM-CLIP-ViT-Llama3-8b \
+    --output_dir outputs/pretrain_dsg_VisPer-LM-CLIP-ViT-Llama3-8b \
     --num_train_epochs 1 \
     --per_device_train_batch_size 32 \
     --per_device_eval_batch_size 4 \

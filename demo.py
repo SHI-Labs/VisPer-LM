@@ -357,12 +357,12 @@ txt = gr.Textbox(
 )
 
 
-title = "<h1 style='margin-bottom: -10px; text-align: center'>OLA-VLM: Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation</h1>"
+title = "<h1 style='margin-bottom: -10px; text-align: center'>Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation</h1>"
 description = "<p style='font-size: 16px; margin: 5px; font-weight: w300; text-align: center'> <a href='https://praeclarumjj3.github.io/' style='text-decoration:none' target='_blank'>Jitesh Jain</a> &nbsp;&nbsp <a href='https://zyang-ur.github.io/' style='text-decoration:none' target='_blank'>Zhengyuan Yang</a> &nbsp;&nbsp <a href='https://www.humphreyshi.com/home' style='text-decoration:none' target='_blank'>Humphrey Shi<sup>*</sup></a> &nbsp;&nbsp <a href='https://www.humphreyshi.com/home' style='text-decoration:none' target='_blank'>Jianfeng Gao<sup>*</sup></a> &nbsp;&nbsp <a href='https://jwyang.github.io/' style='text-decoration:none' target='_blank'>Jianwei Yang<sup>*</sup></a></p>" \
             + "<p style='font-size: 12px; margin: 5px; font-weight: w300; text-align: center'><sup>*</sup>Equal Advising</p>" \
-            + "<p style='font-size: 16px; margin: 5px; font-weight: w600; text-align: center'> <a href='https://praeclarumjj3.github.io/ola_vlm/' target='_blank'>Project Page</a> | <a href='https://youtu.be/' target='_blank'>Video</a> | <a href='https://arxiv.org/abs/2412.09585' target='_blank'>ArXiv</a> | <a href='https://github.com/SHI-Labs/OLA-VLM' target='_blank'>Github</a></p>" \
-            + "<p style='text-align: center; font-size: 14px; margin: 5px; font-weight: w300;'>OLA-VLM introduces a new approach to distilling vision knowledge into the hidden representations of LLMs, utilizing target representations to advance visual perception in MLLMs.</p>" \
-            + "<p style='text-align: left; font-size: 14px; margin: 5px; font-weight: w300;'>In the demo, along with the chatting with OLA-VLM, you can also visualize the intermediate representations from selected layers of the LLM by clicking on the <code style='font-size: 14px;'>Visualize Intermediate Representations</code> button! Note that our demo only supports single image input currently.</p>" \
+            + "<p style='font-size: 16px; margin: 5px; font-weight: w600; text-align: center'> <a href='https://praeclarumjj3.github.io/visper_lm/' target='_blank'>Project Page</a> | <a href='https://youtu.be/' target='_blank'>Video</a> | <a href='https://arxiv.org/abs/2412.09585' target='_blank'>ArXiv</a> | <a href='https://github.com/SHI-Labs/VisPer-LM' target='_blank'>Github</a></p>" \
+            + "<p style='text-align: center; font-size: 14px; margin: 5px; font-weight: w300;'>VisPer-LM introduces a new approach to distilling vision knowledge into the hidden representations of LLMs, utilizing target representations to advance visual perception in MLLMs.</p>" \
+            + "<p style='text-align: left; font-size: 14px; margin: 5px; font-weight: w300;'>In the demo, along with the chatting with VisPer-LM, you can also visualize the intermediate representations from selected layers of the LLM by clicking on the <code style='font-size: 14px;'>Visualize Intermediate Representations</code> button! Note that our demo only supports single image input currently.</p>" \
             + "<ul style='text-align: left; font-size: 14px; margin: 5px; font-weight: w300; padding: 0;'> \
                  <li><b>depth</b>: Visualizes the depth information in the representations using the decoder from the <a href='https://github.com/DepthAnything/Depth-Anything-V2' target='_blank'>Depth-Anything-v2 model</a>.</li> \
                  <li><b>seg</b>: Visualizes the segmentation information in the representations using the decoder from the <a href='https://github.com/SHI-Labs/OneFormer' target='_blank'>OneFormer model</a>.</li> \
@@ -389,7 +389,7 @@ block_css = """
 
 
 textbox = gr.Textbox(show_label=False, placeholder="Enter text and press ENTER", container=False)
-with gr.Blocks(title="OLA-VLM", theme=gr.themes.Default(), css=block_css) as demo:
+with gr.Blocks(title="VisPer-LM", theme=gr.themes.Default(), css=block_css) as demo:
     state = gr.State()
 
     gr.Markdown(title)
@@ -412,7 +412,7 @@ with gr.Blocks(title="OLA-VLM", theme=gr.themes.Default(), css=block_css) as dem
         with gr.Column(scale=8):
             chatbot = gr.Chatbot(
                 elem_id="chatbot",
-                label="OLA-VLM",
+                label="VisPer-LM",
                 height=300,
                 layout="panel",
             )

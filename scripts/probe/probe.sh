@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export WANDB_PROJECT= "OLA-VLM"
+export WANDB_PROJECT= "VisPer-LM"
 export WANDB_NAME="probe_depth_ola-vlm-pt-ift"
 
 # 8 GPUs

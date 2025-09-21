@@ -28,7 +28,7 @@ setup(
     },
     url="https://praeclarumjj3.github.io/ola_vlm",
     project_urls={
-        "Bug Tracker": "https://github.com/SHI-Labs/OLA-VLM/issues"
+        "Bug Tracker": "https://github.com/SHI-Labs/VisPer-LM/issues"
     },
     packages=find_packages(exclude=["assets*", "benchmark*", "docs", "dist*", "playground*", "scripts*", "tests*"]),
     include_package_data=True,

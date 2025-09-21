@@ -1,6 +1,6 @@
-# Training OLA-VLM
+# Training VisPer-LM
 
-By default, we train our OLA-VLM models using two stages:
+By default, we train our VisPer-LM models using two stages:
 
 - **Pre-Training (PT)** with the next-token prediction objective and embedding losses. We set the parameters belonging to the MLP Projector, embedding predictors, and the special task tokens as learnable during the PT stage.
 - **Instruction Fine-tuning (IFT)** with only the next-token prediction objective with the MLP Projector and the LLM parameters set as learnable.

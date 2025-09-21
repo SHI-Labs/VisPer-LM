@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export WANDB_PROJECT= "OLA-VLM"
-export WANDB_NAME="vpt_OLA-VLM-CLIP-ViT-Llama3-8b"
+export WANDB_PROJECT= "VisPer-LM"
+export WANDB_NAME="vpt_VisPer-LM-CLIP-ViT-Llama3-8b"
 
 # Base LLM choices: 
 # Llama3-8b: meta-llama/Meta-Llama-3-8B-Instruct (llava_llama_3)
@@ -14,7 +14,7 @@ export WANDB_NAME="vpt_OLA-VLM-CLIP-ViT-Llama3-8b"
 # 8 GPUs
 deepspeed ola_vlm/train/train_mem.py \
     --deepspeed ./scripts/zero2.json \
-    --model_name_or_path outputs/v-pretrain_OLA-VLM-CLIP-ViT-Llama3-8b \
+    --model_name_or_path outputs/v-pretrain_VisPer-LM-CLIP-ViT-Llama3-8b \
     --version llava_llama_3 \
     --data_path datasets/llava_v1_5_mix665k.json \
     --image_folder datasets/ \
@@ -26,7 +26,7 @@ deepspeed ola_vlm/train/train_mem.py \
     --image_aspect_ratio pad \
     --group_by_modality_length True \
     --bf16 True \
-    --output_dir outputs/vpt_OLA-VLM-CLIP-ViT-Llama3-8b \
+    --output_dir outputs/vpt_VisPer-LM-CLIP-ViT-Llama3-8b \
     --num_train_epochs 1 \
     --per_device_train_batch_size 16 \
     --per_device_eval_batch_size 4 \

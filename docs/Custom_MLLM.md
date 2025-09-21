@@ -1,6 +1,6 @@
 # Integrate Predictive Embedding Optimization into your Custom MLLM
 
-We provide a base class for our OLA-VLM, making it easy to integrate it into your own MLLM. Below, we outline the steps:
+We provide a base class for our VisPer-LM, making it easy to integrate it into your own MLLM. Below, we outline the steps:
 
 - Extend your MLLM class with the [`BaseOLA_VLM`](../ola_vlm/model/language_model/base_ola_vlm.py) class.
 
@@ -23,7 +23,7 @@ emb_loss = depth_loss + seg_loss + gen_loss
 total_loss = text_ntp_loss + emb_loss
 ```
 
-- You also need to make a few changes to your dataloader as shown in [`ola_vlm_train.py`](https://github.com/SHI-Labs/OLA-VLM/blob/e5133dc149a0bfec3646c3ce6cf79bb902ca187a/ola_vlm/train/ola_vlm_train.py#L774) for LLaVA-like models.
+- You also need to make a few changes to your dataloader as shown in [`ola_vlm_train.py`](https://github.com/SHI-Labs/VisPer-LM/blob/e5133dc149a0bfec3646c3ce6cf79bb902ca187a/ola_vlm/train/ola_vlm_train.py#L774) for LLaVA-like models.
 
 ```python
 class LazySupervisedDataset(Dataset):
@@ -87,6 +87,6 @@ class DataCollatorForSupervisedDataset(object):
         return batch
 ```
 
-- Lastly remember to add [these](https://github.com/SHI-Labs/OLA-VLM/blob/e5133dc149a0bfec3646c3ce6cf79bb902ca187a/ola_vlm/train/ola_vlm_train.py#L1149-L1266) lines before your training function.
+- Lastly remember to add [these](https://github.com/SHI-Labs/VisPer-LM/blob/e5133dc149a0bfec3646c3ce6cf79bb902ca187a/ola_vlm/train/ola_vlm_train.py#L1149-L1266) lines before your training function.
 
 Now, you are all set to optimize the embedding losses along with the next-token prediction during the MLLM training!
