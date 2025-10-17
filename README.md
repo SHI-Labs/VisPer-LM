@@ -9,7 +9,7 @@
 
 [[`Project Page`](https://praeclarumjj3.github.io/visper_lm/)] | [[`arXiv`](https://arxiv.org/abs/2412.09585)] [[`Model Checkpoints`](https://huggingface.co/models?search=OLA-VLM)] [[`Video`](https://drive.google.com/file/d/1nESAo9SiMt8uTH7GC3sAJIg8qohBC2-t/view?usp=drive_link)] [[`BibTeX`](#citation)]
 
-This repo contains the code for our paper **Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation**.
+This repo contains the code for our paper **Elevating Visual Perception in Multimodal LLMs with Visual Embedding Distillation**.
 
 <p align="center">
     <img src="assets/teaser.png" width="100%" class="center"/>
@@ -105,7 +105,7 @@ If you found VisPer-LM useful in your research, please consider starring ⭐ us 
 
 ```bibtex
 @inproceedings{jain2025visper_lm,
-      title={{Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation}},
+      title={{Elevating Visual Perception in Multimodal LLMs with Visual Embedding Distillation}},
       author={Jitesh Jain and Zhengyuan Yang and Humphrey Shi and Jianfeng Gao and Jianwei Yang},
       booktitle={NeurIPS},
       year={2025}
